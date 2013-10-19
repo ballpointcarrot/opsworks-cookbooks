@@ -20,7 +20,11 @@
 package 'apache2' do
   case node[:platform]
   when 'centos','redhat','fedora','amazon'
-    package_name node[:apache][:httpd_pkg]
+    if node[:apache][:httpd_ver] == "24"
+      package_name "httpd24"
+    else
+      package_name "httpd"
+    end
   when 'debian','ubuntu'
     package_name 'apache2'
   end

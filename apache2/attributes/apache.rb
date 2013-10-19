@@ -20,7 +20,7 @@
 # Where the various parts of apache are
 case node[:platform]
 when 'redhat','centos','fedora','amazon'
-  default[:apache][:httpd_pkg]   = 'httpd'
+  default[:apache][:httpd_ver]   = '22'
   default[:apache][:dir]         = '/etc/httpd'
   default[:apache][:log_dir]     = '/var/log/httpd'
   default[:apache][:user]        = 'apache'
