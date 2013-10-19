@@ -20,7 +20,7 @@
 package 'apache2' do
   case node[:platform]
   when 'centos','redhat','fedora','amazon'
-    package_name 'httpd'
+    package_name node[:apache][:httpd_pkg]
   when 'debian','ubuntu'
     package_name 'apache2'
   end
